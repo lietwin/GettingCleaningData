@@ -3,6 +3,8 @@
 ## author: "Ludi Akue (Lietwin)"
 ###
 
+message("To make things smooth let's clear the environment")
+rm(list = ls())
 library("dplyr")
 
 trainfile <- "UCI_HAR_data/train/X_train.txt"
@@ -77,5 +79,7 @@ tidynew <- tbl_df(tidysubjact)
 featmean <- featmeansd[, grep("mean", names(featmeansd))]
 tidynew <- tbl_df(cbind(tidynew, featmean))
 
+## save it to a file named tidydata.txt
+write.table(tidynew, "tidydata.txt", row.names = F)
 
 
