@@ -1,0 +1,73 @@
+---
+title: "CodeBook.md"
+author: "Ludi Akue (Lietwin)"
+date: "June 23, 2015"
+output: html_document
+---
+
+## Variables created 
+
+### Data objects
+Each type of data is handled through four types of data objects corresponding to four different prefixes :
+- train-*: data object for the _train_ data measurements
+- test-*: data object for the _test_ data measurements
+- all-*: data object for the merge of _train_ and _test_ measurements
+- tidy-*:  tidy data object with descriptive labels (in tbl_df format)
+
+- For the features measurements 
+    - trainfeat
+    - testfeat
+    - allfeat
+    - tidyfeat        
+```{r}
+str(tidyfeat)
+```
+
+- For the activities measurements 
+    - trainact
+    - testact
+    - allact
+    - tidyact
+```{r}
+str(tidyact)
+```
+
+- For the subjects measurements 
+    - trainsubject
+    - testsubject
+    - allsubject
+    - tidysubject
+```{r}
+str(tidysubject)
+```
+    
+- labels, features and activities
+    - features_dic
+    - activity_dic
+```{r}
+str(features_dic)
+str(features_dic)
+```
+    
+- The newly created tidy data set
+    - tidynew
+    - the corresponding file name tidydata.txt
+```{r}
+str(tidynew)
+```
+
+```{r}
+tidynew
+```
+
+### Other variables used
+
+- files paths : all the variables ending in "file"
+    - trainfeatfile:  "UCI_HAR_data/train/X_train.txt"
+    - testfeatfile: "UCI_HAR_data/test/X_test.txt"
+    - trainactfile:  "UCI_HAR_data/train/y_train.txt"
+    - testactfile: "UCI_HAR_data/test/y_test.txt"
+    - trainsubjectfile: "UCI_HAR_data/train/subject_train.txt"
+    - testsubjectfile: "UCI_HAR_data/test/subject_test.txt"
+    - featuresfile: "UCI_HAR_data/features.txt"
+    - activitiesfile: "UCI_HAR_data/activity_labels.txt"
