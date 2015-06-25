@@ -4,28 +4,27 @@ This repo contains project files for the "Getting and Cleaning Data course proje
 ## How to use it
 * Download and extract the data into your working directory.
 The data for the project is available here :
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
--Note:  the data directory should be name "UCI_HAR_data" for the program to work-
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
+_Note:  the data directory should be name "UCI_HAR_data" for the program to work_
 
 * Run the file __run_analysis.R__
 
-* A code book describing the variables is avalaible in __CodeBook.Rmd__ (R markdown file, it can be generated in html)
+* A code book describing the variables is avalaible in __CodeBook.Rmd__. An already generated markdown file is avalaible in __CodeBook.md__.
 
 * This code uses the R package __dplyr__, make sure it is installed
 
 ## What the program does?
-The program in run_analysis.R took the existing data and prepare a tidy data that can be used for later analyis. 
+The program in __run_analysis.R__ takes the downloaded data sets and prepares a tidy data that can be used for later analyis. 
 
 1. Merges the training and the test sets to create one data set.  
-
 2. Extracts only the measurements on the mean and standard deviation for each measurement.   
 3. Uses descriptive activity names to name the activities in the data set  
 4. Appropriately labels the data set with descriptive variable names.   
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
 
-See below for the details of the assignment.
+See below for the details of the original assignment.
 
-## The assignment details
+## The original assignment details
 
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. You will be graded by your peers on a series of yes/no questions related to the project. You will be required to submit: 1) a tidy data set as described below, 2) a link to a Github repository with your script for performing the analysis, and 3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. You should also include a README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.  
 
