@@ -5,7 +5,7 @@ This repo contains project files for the "Getting and Cleaning Data course proje
 * Download and extract the data into your working directory.
 The data for the project is available here :
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
-_Note:  the data directory should be name "UCI_HAR_data" for the program to work_
+_Note:  the data directory should be named "UCI_HAR_data" for the program to work_
 
 * Run the file __run_analysis.R__
 
