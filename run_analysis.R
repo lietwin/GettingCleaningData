@@ -6,12 +6,12 @@
 message("Cleaning the environment to avoid inconsistencies")
 rm(list = ls())
 
-message("Make sure that the data has been download in your working directory")
+message("Make sure that the data has been downloaded in your working directory")
 message("Make sure you set your working directory correctly. Hint: swd()")
 #datadir <- "UCI_HAR_data"
 
 if(!file.exists("UCI_HAR_data")){
-    stop("Oops. Make sure the name of the UCI Human Activity Recognition data directory is UCI_HAR_datar")
+    stop("Oops. Make sure the name of the UCI Human Activity Recognition data directory is UCI_HAR_data")
 }
 
 if(!existsFunction("tbl_df")){
@@ -32,7 +32,7 @@ testsubjectfile <- "UCI_HAR_data/test/subject_test.txt"
 featuresfile <- "UCI_HAR_data/features.txt"
 activitiesfile <- "UCI_HAR_data/activity_labels.txt"
 
-message("Charging the data sets")
+message("Loading the data sets")
 
 ## Getting train and test features measures data set
 trainfeat <- read.table(trainfeatfile, header = FALSE, strip.white = TRUE, colClasses = "character", na.strings = "")
@@ -56,14 +56,10 @@ tidyfeat<- tbl_df(tidyfeat)
 features_dic <- read.table(featuresfile, header = FALSE, strip.white = TRUE, colClasses = "character")
 names(tidyfeat) <- features_dic$V2
 
-
 message("---> for the activities measurements")
 
 allact <- rbind(trainact, testact)
 tidyact<- tbl_df(allact)
-
-
-
 
 message("---> for the subjects measurements")
 
@@ -71,8 +67,7 @@ allsubject <- rbind(trainsubject, testsubject)
 names(allsubject) <- "subject"
 tidysubject <- tbl_df(allsubject)
 
-
-message("2. Extracting only the measurements on the mean and standard deviation for each measurement") 
+message("2. Extracting only the measurements of the mean and standard deviation for each measurement") 
 ## extract the mean and the sd
 featmeansd <- tidyfeat[, grep("mean|std", names(tidyfeat))]
 
@@ -82,7 +77,6 @@ activity_dic <- read.table(activitiesfile, header = FALSE, strip.white = TRUE, c
 ## into a nice tidy data
 tidyact<- tbl_df(as.data.frame(apply(allact, 1, function(x) x = activity_dic$V2[as.numeric(x)])))
 names(tidyact) <- "activity"
-
 
 message("4. Appropriately labels the data set with descriptive variable names. ")
 message("---> replacing prefix t by time")
@@ -110,5 +104,3 @@ print(tidynew)
 
 ## save it to a file named tidydata.txt
 write.table(tidynew, "tidydata.txt", row.names = FALSE)
-
-
